@@ -25,7 +25,7 @@ jobs:
           pip install pytest
 
       - name: Run tests
-        run: pytest test.py
+        run: pytest tests
 
   build-and-push:
     needs: test
@@ -42,7 +42,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
-        run: docker build -t jaswanthks/devops-app .
+        run: docker build -t jaswanthks/homework8 .
 
       - name: Push Docker image
-        run: docker push jaswanthks/devops-app
+        run: docker push jaswanthks/homework8
